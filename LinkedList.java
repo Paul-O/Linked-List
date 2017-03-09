@@ -5,7 +5,9 @@ public class LinkedList
   public int size;
   public static void main(String args[])
   {
-    
+    LinkedList list = new LinkedList();
+    Node node = new Node("James");
+    list.add(node);
   }
   public LinkedList()
   {
