@@ -2,6 +2,17 @@ public class LinkedList
 {
   public Node head = null;
   public Node tail = null;
+  public static void main(String args[])
+  {
+    Node z = new Node("Jimmy");
+    System.out.println(z.getPrev());
+    System.out.println(z.getNext());
+    System.out.println(z.getName());
+    z.setName("mark");
+    System.out.println(z.getPrev());
+    System.out.println(z.getNext());
+    System.out.println(z.getName());
+  }
   public void add(Node n)
   {
     if(head == null)
