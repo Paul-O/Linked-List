@@ -2,13 +2,14 @@ public class LinkedList
 {
   public Node head = null;
   public Node tail = null;
+  public int size;
   public static void main(String args[])
   {
     
   }
   public LinkedList()
   {
-    
+    this.size = 0;
   }
   public void add(Node n)
   {
