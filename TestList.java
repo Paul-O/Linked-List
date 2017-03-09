@@ -6,5 +6,9 @@ public class TestList
     System.out.println(z.getPrev());
     System.out.println(z.getNext());
     System.out.println(z.getName());
+    z.setName("mark");
+    System.out.println(z.getPrev());
+    System.out.println(z.getNext());
+    System.out.println(z.getName());
   }
 }
