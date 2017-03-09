@@ -13,6 +13,10 @@ public class LinkedList
     System.out.println(z.getNext());
     System.out.println(z.getName());
   }
+  public LinkedList()
+  {
+    
+  }
   public void add(Node n)
   {
     if(head == null)
@@ -31,6 +35,21 @@ public class LinkedList
       n.prev = tail;
       tail.next = n;
       tail = n;
+    }
+  }
+  public void remove()
+  {
+    
+  }
+  public boolean isEmpty()
+  {
+    if(head == null && tail == null)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
     }
   }
 }
