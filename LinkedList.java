@@ -72,4 +72,13 @@ public class LinkedList
       return false;
     }
   }
+  public void iterateFoward()
+  {
+    Node current = head;
+    while(current != null)
+    {
+      System.out.println(current.toString());
+      current = current.getNext();
+    }
+  }
 }
