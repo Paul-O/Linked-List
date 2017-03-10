@@ -3,6 +3,7 @@ public class LinkedList
   public Node head = null;
   public Node tail = null;
   public int size;
+  
   public static void main(String args[])
   {
     LinkedList list = new LinkedList();
@@ -63,14 +64,12 @@ public class LinkedList
   }
   public boolean isEmpty()
   {
-    if(head == null && tail == null)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+      return head == null;
+  }
+  public void delete()
+  {
+    head = null;
+    tail = null;
   }
   public void iterateFoward()
   {
