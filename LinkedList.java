@@ -77,14 +77,14 @@ public class LinkedList
           else if(temp == tail)
           {
             tail.getPrev().setNext(n);
-            n.setPrev(temp.getPrev())
+            n.setPrev(temp.getPrev());
             temp.prev = n;
             n.next = tail;
           }
           else
           {
-            temp.getPrev.setNext(n);
-            n.setPrev(temp.getPrev);
+            temp.getPrev().setNext(n);
+            n.setPrev(temp.getPrev());
             n.next = temp;
             temp.prev = n;
           }
@@ -115,7 +115,7 @@ public class LinkedList
             temp.prev = temp;
             tail = n;
           }
-          else if(temp = head)
+          else if(temp == head)
           {
             
           }
