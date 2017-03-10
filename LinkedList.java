@@ -1,41 +1,23 @@
 public class LinkedList
 {
-  public Node head = null;
-  public Node tail = null;
-  public int size;
   
   public static void main(String args[])
   {
+    LinkedList list = new LinkedList();
+    list.add("Paul");
+    list.add("Edward");
+    list.add("Gregory");
+    list.add("Michael");
+    list.add("Miriam");
     
+    list.print();
   }
   public LinkedList()
   {
-    this.size = 0;
   }
-  public int getSize()
-  {
-    return this.size;
-  }
-  public void setSize(int value)
-  {
-    this.size = value;
-  }
-  public Node getHead()
-  {
-    return this.head;
-  }
-  public void setHead(Node c)
-  {
-    this.head = c;
-  }
-  public Node getTail()
-  {
-    return this.tail;
-  }
-  public void setTail(Node d)
-  {
-    this.tail = d;
-  }
+    private Node head;
+    private Node tail;
+    
   public void add(String name)
   {
     Node n = new Node(name);
@@ -48,15 +30,15 @@ public class LinkedList
     {
       if(n.getName().compareTo(head.getName()) < 0)
       {
-        n.next = tail;
-        tail.prev = n;
         head = n;
+        head.setNext(tail);
+        tail.setPrev(head);
       }
       else
       {
-        n.prev = head;
-        head.prev = n;
         tail = n;
+        tail.setPrev(head);
+        head.setNext(tail);
       }
     }
     else
@@ -68,26 +50,26 @@ public class LinkedList
         {
           if(temp == head)
           {
-            n.next = temp;
-            temp.prev = n;
+            n.setNext(head);
+            head.setPrev(n);
             head = n;
           }
           else if(temp == tail)
           {
             tail.getPrev().setNext(n);
-            n.setPrev(temp.getPrev());
-            temp.prev = n;
-            n.next = tail;
+            n.setPrev(tail.getPrev());
+            n.setNext(tail);
+            tail.setPrev(n);
           }
           else
           {
             temp.getPrev().setNext(n);
             n.setPrev(temp.getPrev());
-            n.next = temp;
-            temp.prev = n;
+            n.setNext(temp);
+            temp.setPrev(n);
           }
         }
-        else if(n.getName().compareTo(temp.getName()) > 0)
+       /*else if(n.getName().compareTo(temp.getName()) > 0)
         {
           if(temp == tail)
           {
@@ -131,7 +113,7 @@ public class LinkedList
             n.next = temp;
             temp.prev = temp;
           }
-        }
+        }*/
         temp = temp.getNext();
       }
     }
@@ -143,6 +125,16 @@ public class LinkedList
   public void deleteNode()
   {
     
+  }
+  
+  public void print()
+  {
+    Node temp = head;
+    while(temp != null)
+    {
+      System.out.println(temp.getName());
+      temp = temp.getNext();
+    }
   }
   public boolean isEmpty()
   {
