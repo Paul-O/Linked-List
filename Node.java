@@ -3,6 +3,7 @@ public class Node
   public String name;
   public Node prev = null;
   public Node next = null;
+  
   public Node(String name)
   {
     this.name = name;
