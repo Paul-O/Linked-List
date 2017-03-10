@@ -6,9 +6,7 @@ public class LinkedList
   
   public static void main(String args[])
   {
-    LinkedList list = new LinkedList();
-    Node node = new Node("James");
-    list.add(node);
+    
   }
   public LinkedList()
   {
@@ -117,7 +115,9 @@ public class LinkedList
           }
           else if(temp == head)
           {
-            
+            n.next = temp;
+            temp.prev = n;
+            head = n;
           }
           else
           {
