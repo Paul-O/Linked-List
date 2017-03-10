@@ -38,8 +38,9 @@ public class LinkedList
   {
     this.tail = d;
   }
-  public void add(Node n)
+  public void add(String name)
   {
+    Node n = new Node(name);
     if(head == null)
     {
       head = n;
@@ -47,18 +48,92 @@ public class LinkedList
     }
     else if(head == tail)
     {
-      tail = n;
-      head.next = tail;
-      tail.prev = head;
+      if(n.getName().compareTo(head.getName()) < 0)
+      {
+        n.next = tail;
+        tail.prev = n;
+        head = n;
+      }
+      else
+      {
+        n.prev = head;
+        head.prev = n;
+        tail = n;
+      }
     }
     else
     {
-      n.prev = tail;
-      tail.next = n;
-      tail = n;
+      Node temp = head;
+      while(temp != null)
+      {
+        if(n.getName().compareTo(temp.getName()) < 0)
+        {
+          if(temp == head)
+          {
+            n.next = temp;
+            temp.prev = n;
+            head = n;
+          }
+          else if(temp == tail)
+          {
+            tail.getPrev().setNext(n);
+            n.setPrev(temp.getPrev())
+            temp.prev = n;
+            n.next = tail;
+          }
+          else
+          {
+            temp.getPrev.setNext(n);
+            n.setPrev(temp.getPrev);
+            n.next = temp;
+            temp.prev = n;
+          }
+        }
+        else if(n.getNext().compareTo(temp.getNext()) > 0)
+        {
+          if(temp == tail)
+          {
+            n.prev = temp;
+            temp.next = n;
+            tail = n;
+          }
+          if(temp == head)
+          {
+            
+          }
+          else
+          {
+            n.prev = temp;
+            temp.next = n;
+          }
+        }
+        else
+        {
+          if(temp == tail)
+          {
+            n.next = temp;
+            temp.prev = temp;
+            tail = n;
+          }
+          else if(temp = head)
+          {
+            
+          }
+          else
+          {
+            n.next = temp;
+            temp.prev = temp;
+          }
+        }
+        temp = temp.getNext();
+      }
     }
   }
   public void remove()
+  {
+    
+  }
+  public void deleteNode()
   {
     
   }
