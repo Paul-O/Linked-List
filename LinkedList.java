@@ -81,4 +81,13 @@ public class LinkedList
       current = current.getNext();
     }
   }
+  public void iterateRevese()
+  {
+    Node last = tail;
+    while(last != null)
+    {
+      System.out.println(last.toString());
+      last = last.getPrev();
+    }
+  }
 }
