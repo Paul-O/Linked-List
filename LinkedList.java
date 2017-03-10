@@ -89,7 +89,7 @@ public class LinkedList
             temp.prev = n;
           }
         }
-        else if(n.getNext().compareTo(temp.getNext()) > 0)
+        else if(n.getName().compareTo(temp.getNext()) > 0)
         {
           if(temp == tail)
           {
