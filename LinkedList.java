@@ -97,10 +97,15 @@ public class LinkedList
           }
           if(temp == head)
           {
-            
+            head.getNext().setPrev(n);
+            n.setNext(head.getPrev());
+            n.setPrev(head);
+            head.next = n;
           }
           else
           {
+            temp.getNext().setPrev(n);
+            n.setNext(temp.getNext());
             n.prev = temp;
             temp.next = n;
           }
@@ -121,6 +126,8 @@ public class LinkedList
           }
           else
           {
+            temp.getPrev().setNext(n);
+            n.setPrev(temp.getPrev());
             n.next = temp;
             temp.prev = temp;
           }
