@@ -91,8 +91,8 @@ public class LinkedList
             n.prev = temp;
             temp.next = n;
           }
-        }
-        else
+        }*/
+        /*else
         {
           if(temp == tail)
           {
@@ -126,7 +126,17 @@ public class LinkedList
   {
     
   }
-  
+  public Node find(String s)
+  {
+    Node newNode = new Node(s);
+    while(n.getName.compareTo(newNode.getName()) != 0 || n.getNext() = null)
+    {
+      if(n.getNext() != null)
+      {
+        
+      }
+    }
+  }
   public void print()
   {
     Node temp = head;
