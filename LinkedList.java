@@ -15,6 +15,8 @@ public class LinkedList
     list.print();
     list.add("Miriam");
     list.print();
+    //list.remove("Edward");
+    //list.print();
     //System.out.println(list.find("Michael"));
     //System.out.println(list.find("Zach"));
   }
@@ -88,15 +90,13 @@ public class LinkedList
             n.setPrev(head);
             head.setNext(n);
           }
-          /*
           else
           {
-            n.setNext(temp.getNext());
             temp.getNext().setPrev(n);
+            n.setNext(temp.getNext());
             n.setPrev(temp);
             temp.setNext(n);
           }
-          */
         }
         /*
         else
@@ -147,7 +147,7 @@ public class LinkedList
   public Node find(String s)
   {
     Node v = head;
-    while(v.getNext() != null && v.getName().compareTo(s) != 0)
+    while(v != null && v.getName().compareTo(s) != 0)
     {
       v = v.getNext();
     }
