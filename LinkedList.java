@@ -1,6 +1,7 @@
 public class LinkedList
 {
-  
+  private Node head;
+  private Node tail;
   public static void main(String args[])
   {
     LinkedList list = new LinkedList();
@@ -11,13 +12,13 @@ public class LinkedList
     list.add("Miriam");
     
     list.print();
+    System.out.println(list.find("Michael"));
+    System.out.println(list.find("Zach"));
   }
   public LinkedList()
   {
-  }
-    private Node head;
-    private Node tail;
     
+  }
   public void add(String name)
   {
     Node n = new Node(name);
@@ -135,15 +136,20 @@ public class LinkedList
       tmp.setNext(tmp.getNext().getNext());
     }
   }
-  public Node find(String s, Node n)
+  public Node find(String s)
   {
-    Node newNode = new Node(s);
-    while(n.getName().compareTo(newNode.getName()) != 0 || n.getNext() == null)
+    Node v = head;
+    while(v.getNext() != null && v.getName().compareTo(s) != 0)
     {
-      if(n.getNext() != null)
-      {
-        
-      }
+      v = v.getNext();
+    }
+    if(v.getName().compareTo(s) == 0)
+    {
+      return v;
+    }
+    else
+    {
+      return null;
     }
   }
   public void print()
