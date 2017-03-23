@@ -122,14 +122,11 @@ public class LinkedList
   {
     Node tmp = this.head;
     int i = 0;
-    // delete head
     if (index == 0) {
       this.head = this.head.getNext();
     }
-    // delete nodes later in list
-    while (tmp.getNext() != null 
-             && i < index-1) {
-      //System.out.println("Delete: " + i);
+    while (tmp.getNext() != null && i < index-1)
+    {
       tmp = tmp.getNext();
       i++;
     }
