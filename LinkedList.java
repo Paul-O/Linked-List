@@ -6,14 +6,17 @@ public class LinkedList
   {
     LinkedList list = new LinkedList();
     list.add("Paul");
-    list.add("Edward");
-    list.add("Gregory");
-    list.add("Michael");
-    list.add("Miriam");
-    
     list.print();
-    System.out.println(list.find("Michael"));
-    System.out.println(list.find("Zach"));
+    list.add("Edward");
+    list.print();
+    list.add("Gregory");
+    list.print();
+    list.add("Michael");
+    list.print();
+    list.add("Miriam");
+    list.print();
+    //System.out.println(list.find("Michael"));
+    //System.out.println(list.find("Zach"));
   }
   public LinkedList()
   {
@@ -47,7 +50,7 @@ public class LinkedList
       Node temp = head;
       while(temp != null)
       {
-        if(n.getName().compareTo(temp.getName()) < 0)
+        if(n.getName().compareTo(temp.getName()) < 0) // Checks if new node is before the temp node alphabetically
         {
           if(temp == head)
           {
@@ -70,52 +73,53 @@ public class LinkedList
             temp.setPrev(n);
           }
         }
-       /*
-        else if(n.getName().compareTo(temp.getName()) > 0)
+        else if(n.getName().compareTo(temp.getName()) > 0) // Checks if new node is after the temp node alphabetically
         {
           if(temp == tail)
           {
-            n.prev = temp;
-            temp.next = n;
+            temp.setNext(n);
+            n.setPrev(temp);
             tail = n;
           }
           if(temp == head)
           {
             head.getNext().setPrev(n);
-            n.setNext(head.getPrev());
+            n.setNext(head.getNext());
             n.setPrev(head);
-            head.next = n;
+            head.setNext(n);
           }
+          /*
           else
           {
-            temp.getNext().setPrev(n);
             n.setNext(temp.getNext());
-            n.prev = temp;
-            temp.next = n;
+            temp.getNext().setPrev(n);
+            n.setPrev(temp);
+            temp.setNext(n);
           }
+          */
         }
-        */
         /*
         else
         {
           if(temp == tail)
           {
-            n.next = temp;
-            temp.prev = temp;
+            temp.setNext(n);
+            n.setPrev(temp);
             tail = n;
           }
           else if(temp == head)
           {
-            n.next = temp;
-            temp.prev = n;
-            head = n;
+            n.setPrev(temp);
+            n.setNext(temp.getNext());
+            temp.getNext().setPrev(n);
+            temp.setNext(n);
           }
           else
           {
-            temp.getPrev().setNext(n);
-            n.setPrev(temp.getPrev());
-            n.next = temp;
-            temp.prev = temp;
+            n.setPrev(temp);
+            n.setNext(temp.getNext());
+            temp.getNext().setPrev(n);
+            temp.setNext(n);
           }
         }
         */
