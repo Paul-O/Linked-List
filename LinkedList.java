@@ -120,11 +120,23 @@ public class LinkedList
   }
   public void remove()
   {
-    
-  }
-  public void deleteNode()
-  {
-    
+    Node tmp = this.head;
+    int i = 0;
+    // delete head
+    if (index == 0) {
+      this.head = this.head.getNext();
+    }
+    // delete nodes later in list
+    while (tmp.getNext() != null 
+             && i < index-1) {
+      //System.out.println("Delete: " + i);
+      tmp = tmp.getNext();
+      i++;
+    }
+    if (index < size && index > 0) {
+      tmp.setNext(tmp.getNext().getNext());
+    size--;
+    }    
   }
   public Node find(String s)
   {
