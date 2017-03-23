@@ -118,7 +118,7 @@ public class LinkedList
       }
     }
   }
-  public void remove()
+  public void remove(int index)
   {
     Node tmp = this.head;
     int i = 0;
@@ -133,15 +133,15 @@ public class LinkedList
       tmp = tmp.getNext();
       i++;
     }
-    if (index < size && index > 0) {
+    if (tmp.getNext() != null && index > 0)
+    {
       tmp.setNext(tmp.getNext().getNext());
-    size--;
-    }    
+    }
   }
-  public Node find(String s)
+  public Node find(String s, Node n)
   {
     Node newNode = new Node(s);
-    while(n.getName.compareTo(newNode.getName()) != 0 || n.getNext() = null)
+    while(n.getName().compareTo(newNode.getName()) != 0 || n.getNext() == null)
     {
       if(n.getNext() != null)
       {
