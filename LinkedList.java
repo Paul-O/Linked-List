@@ -70,7 +70,8 @@ public class LinkedList
             temp.setPrev(n);
           }
         }
-       /*else if(n.getName().compareTo(temp.getName()) > 0)
+       /*
+        else if(n.getName().compareTo(temp.getName()) > 0)
         {
           if(temp == tail)
           {
@@ -92,8 +93,10 @@ public class LinkedList
             n.prev = temp;
             temp.next = n;
           }
-        }*/
-        /*else
+        }
+        */
+        /*
+        else
         {
           if(temp == tail)
           {
@@ -114,7 +117,8 @@ public class LinkedList
             n.next = temp;
             temp.prev = temp;
           }
-        }*/
+        }
+        */
         temp = temp.getNext();
       }
     }
