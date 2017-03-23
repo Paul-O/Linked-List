@@ -11,10 +11,8 @@ public class LinkedList
     list.add("Michael");
     list.add("Miriam");
     list.print();
-    //list.remove("Edward");
-    //list.print();
-    //System.out.println(list.find("Michael"));
-    //System.out.println(list.find("Zach"));
+    System.out.println(" ");
+    System.out.println(list.find("Michael"));
   }
   public LinkedList()
   {
