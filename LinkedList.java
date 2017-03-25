@@ -12,6 +12,10 @@ public class LinkedList
     list.add("Miriam");
     list.print();
     System.out.println(" ");
+    list.iterateForward();
+    System.out.println(" ");
+    list.iterateReverse();
+    System.out.println(" ");
     System.out.println(list.find("Michael"));
   }
   public LinkedList()
@@ -123,7 +127,7 @@ public class LinkedList
     head = null;
     tail = null;
   }
-  public void iterateFoward()
+  public void iterateForward()
   {
     Node current = head;
     while(current != null)
