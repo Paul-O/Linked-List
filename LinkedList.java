@@ -17,6 +17,9 @@ public class LinkedList
     list.iterateReverse();
     System.out.println(" ");
     System.out.println(list.find("Michael"));
+    System.out.println(" ");
+    list.delete();
+    System.out.print(list.isEmpty());
   }
   public LinkedList()
   {
