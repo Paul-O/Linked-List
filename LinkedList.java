@@ -131,7 +131,7 @@ public class LinkedList
     head = null;
     tail = null;
   }
-  public void iterateForward()
+  public void iterateForward() // prints list of all Nodes from head to tail
   {
     Node current = head;
     while(current != null)
@@ -140,7 +140,7 @@ public class LinkedList
       current = current.getNext();
     }
   }
-  public void iterateReverse()
+  public void iterateReverse() // prints list of all Nodes from tail to head
   {
     Node current = tail;
     while(current != null)
