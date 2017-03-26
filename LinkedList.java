@@ -12,6 +12,7 @@ public class LinkedList
     list.add("Miriam");
     list.print();
     System.out.println(" ");
+    System.out.print(list.isEmpty());
     list.iterateForward();
     System.out.println(" ");
     list.iterateReverse();
@@ -25,7 +26,7 @@ public class LinkedList
   {
     
   }
-  public void add(String name)
+  public void add(String name) // adds new Node to list alphabetically
   {
     Node n = new Node(name);
     if(head == null)
@@ -79,7 +80,7 @@ public class LinkedList
       }
     }
   }
-  public void remove(int index)
+  public void remove(int index) // removes Node from list
   {
     Node tmp = this.head;
     int i = 0;
@@ -96,7 +97,7 @@ public class LinkedList
       tmp.setNext(tmp.getNext().getNext());
     }
   }
-  public Node find(String s)
+  public Node find(String s) // finds Node that matches a String
   {
     Node v = head;
     while(v != null && v.getName().compareTo(s) != 0)
@@ -112,7 +113,7 @@ public class LinkedList
       return null;
     }
   }
-  public void print()
+  public void print() // prints list
   {
     Node temp = head;
     while(temp != null)
@@ -121,7 +122,7 @@ public class LinkedList
       temp = temp.getNext();
     }
   }
-  public boolean isEmpty()
+  public boolean isEmpty() // checks if list is empty;
   {
     return head == null;
   }
