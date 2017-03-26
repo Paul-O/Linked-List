@@ -13,6 +13,11 @@ public class LinkedList
     list.print();
     System.out.println(" ");
     System.out.print(list.isEmpty());
+    System.out.println(" ");
+    list.remove("Miriam");
+    System.out.println(" ");
+    list.print();
+    System.out.println(" ");
     list.iterateForward();
     System.out.println(" ");
     list.iterateReverse();
@@ -80,21 +85,18 @@ public class LinkedList
       }
     }
   }
-  public void remove(int index) // removes Node from list
+  public void remove(String s) // removes Node from list
   {
-    Node tmp = this.head;
-    int i = 0;
-    if (index == 0) {
-      this.head = this.head.getNext();
-    }
-    while (tmp.getNext() != null && i < index-1)
+    Node v = head;
+    while(v != null && v.getName().compareTo(s) != 0)
     {
-      tmp = tmp.getNext();
-      i++;
+      v = v.getNext();
     }
-    if (tmp.getNext() != null && index > 0)
+    if(v.getName().compareTo(s) == 0)
     {
-      tmp.setNext(tmp.getNext().getNext());
+      v.getPrev().setNext(v.getNext());
+      v.getNext().setPrev(v.getPrev());
+      v = null;
     }
   }
   public Node find(String s) // finds Node that matches a String
